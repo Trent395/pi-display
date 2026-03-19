@@ -7,11 +7,23 @@ This repo captures the working local-display configuration:
 - `bash_profile`: starts the Wayland session on `tty1`
 - `labwc/rc.xml`: disables non-touch pointer devices and keeps touch enabled
 - `labwc/autostart`: launches Chromium in kiosk mode
-- `chromium/hide-cursor-extension/`: page-level cursor hiding extension
+- `chromium/hide-cursor-extension/`: cursor hiding and left/right swipe app switching
 
 Target URL:
 
 - `http://jetson-orin-nano.swordfish-kelvin.ts.net:5000/kiosk`
+
+Required packages on the Pi:
+
+- `chromium`
+- `labwc`
+- `x11-apps`
+
+Current swipe app order:
+
+- Camera: `http://jetson-orin-nano.swordfish-kelvin.ts.net:5000/kiosk`
+- Home Assistant: `http://jetson-orin-nano.swordfish-kelvin.ts.net:8123`
+- Spotify: `https://open.spotify.com/`
 
 Apply on the Pi as user `pi3-5`:
 
