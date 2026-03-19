@@ -18,7 +18,29 @@
   ];
 
   const style = document.createElement('style');
-  style.textContent = '* { cursor: none !important; }';
+  style.textContent = `
+    * {
+      cursor: none !important;
+      scrollbar-color: rgba(120, 120, 120, 0.7) rgba(32, 32, 32, 0.35) !important;
+      scrollbar-width: thin !important;
+    }
+
+    *::-webkit-scrollbar {
+      width: 10px !important;
+      height: 10px !important;
+      background: rgba(32, 32, 32, 0.35) !important;
+    }
+
+    *::-webkit-scrollbar-thumb {
+      background: rgba(120, 120, 120, 0.7) !important;
+      border-radius: 999px !important;
+      border: 2px solid rgba(32, 32, 32, 0.35) !important;
+    }
+
+    *::-webkit-scrollbar-corner {
+      background: rgba(32, 32, 32, 0.35) !important;
+    }
+  `;
 
   const mount = () => {
     if (!style.parentNode) {
