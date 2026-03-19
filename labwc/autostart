@@ -1,0 +1,17 @@
+#!/bin/sh
+EXT_DIR="$HOME/.config/chromium/hide-cursor-extension"
+exec chromium \
+  --enable-remote-extensions \
+  --disable-extensions-except="$EXT_DIR" \
+  --load-extension="$EXT_DIR" \
+  --kiosk \
+  --noerrdialogs \
+  --disable-infobars \
+  --no-first-run \
+  --disable-features=ChromeWhatsNewUI,PrivacySandboxSettings4,Translate \
+  --disable-sync \
+  --no-default-browser-check \
+  --simulate-outdated-no-au='Tue, 31 Dec 2099 23:59:59 GMT' \
+  --touch-events=enabled \
+  --ozone-platform=wayland \
+  http://jetson-orin-nano.swordfish-kelvin.ts.net:5000/kiosk
